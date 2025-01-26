@@ -122,7 +122,8 @@ export default class SupabaseClient<
       accessToken: this._getAccessToken.bind(this),
       ...settings.realtime,
     })
-    this.rest = new PostgrestClient(`${_supabaseUrl}/rest/v1`, {
+    // this.rest = new PostgrestClient(`${_supabaseUrl}/rest/v1`, {
+    this.rest = new PostgrestClient(_supabaseUrl, {
       headers: this.headers,
       schema: settings.db.schema,
       fetch: this.fetch,
